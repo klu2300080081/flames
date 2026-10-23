@@ -1,0 +1,100 @@
+body{
+    background-color: #fcfafa;
+    color: rgb(73, 48, 3);
+    background-image:  url("images/friends-full.png");
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+    
+   
+   
+    
+}
+header{
+    /* padding-top: 7%; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Brush Script MT", cursive;
+    font-size: 400%;
+    color: black;
+}
+header h1{
+    
+  
+    background-color: rgba(255, 255, 255, 0.481);
+    color: rgb(73, 48, 3);
+    border-radius: 30px;
+}
+
+main{
+    /* background-color: aqua; */
+    height: 60vh;
+    margin:0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10%
+
+}
+#input-container{
+    /* background-color: beige; */
+    
+    font-size: xx-large;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    gap:10%;
+    
+    
+   
+}
+.input{
+    
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    
+}
+.input label{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+.input input{
+    padding: 10px 14px;  /* Increases internal height and width */
+    font-size: 110%;     /* Increases the size of the text typed inside */
+    border: 2px solid #ccc;
+    border-radius: 6px;  /* Adds smooth rounded corners */
+    outline: none;
+    
+    
+}
+
+#submit{
+    padding: 10px 30px;
+    font-size: 110%;
+    font-weight: bold;
+    color: rgb(73, 48, 3);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    border-color: rgb(73, 48, 3);
+
+}
+
+.result{
+    /* background-color: #929aab; */
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.481);
+    border-radius: 30px;
+    gap:10%;
+}
