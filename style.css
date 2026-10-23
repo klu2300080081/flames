@@ -1,100 +1,228 @@
-body{
-    background-color: #fcfafa;
+/* ---------- BASE STYLES: LAPTOPS AND DESKTOPS ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
     color: rgb(73, 48, 3);
-    background-image:  url("images/friends-full.png");
-    
+
+    background-color: #fcfafa;
+    background-image: var(--bg-image, url("images/friends-full.png"));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background-image 0.5s ease-in-out;
-    
-   
-   
-    
-}
-header{
-    /* padding-top: 7%; */
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-family: "Brush Script MT", cursive;
-    font-size: 400%;
-    color: black;
-}
-header h1{
-    
-  
-    background-color: rgba(255, 255, 255, 0.481);
-    color: rgb(73, 48, 3);
-    border-radius: 30px;
+    background-attachment: fixed;
 }
 
-main{
-    /* background-color: aqua; */
-    height: 60vh;
-    margin:0;
-    
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Brush Script MT", cursive;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    color: black;
+    padding: 1rem;
+}
+
+header h1 {
+    background-color: rgba(255, 255, 255, 0.65);
+    color: rgb(73, 48, 3);
+    border-radius: 30px;
+    padding: 0.2em 0.7em;
+    margin: 0;
+}
+
+main {
+    min-height: 65vh;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:10%
-
+    gap: 2rem;
 }
-#input-container{
-    /* background-color: beige; */
-    
-    font-size: xx-large;
-    padding: 3%;
+
+#input-container {
     display: flex;
     justify-content: center;
-    gap:10%;
-    
-    
-   
-}
-.input{
-    
-    display: flex;
-    flex-direction: column;
-    background-color: #eeeeee;
-    border-radius: 10px;
-    
-}
-.input label{
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
-}
-.input input{
-    padding: 10px 14px;  /* Increases internal height and width */
-    font-size: 110%;     /* Increases the size of the text typed inside */
-    border: 2px solid #ccc;
-    border-radius: 6px;  /* Adds smooth rounded corners */
-    outline: none;
-    
-    
+    align-items: stretch;
+    gap: clamp(1rem, 5vw, 4rem);
+    width: 100%;
+    max-width: 900px;
+    padding: 1rem;
+    font-size: clamp(1rem, 2vw, 1.8rem);
 }
 
-#submit{
+.input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.input label {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    padding: 0.5rem;
+}
+
+.input input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input input:focus {
+    border-color: rgb(73, 48, 3);
+}
+
+#submit {
     padding: 10px 30px;
-    font-size: 110%;
+    font-size: 1.1rem;
     font-weight: bold;
     color: rgb(73, 48, 3);
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 30px;
-    border-color: rgb(73, 48, 3);
-
+    border: 2px solid rgb(73, 48, 3);
+    cursor: pointer;
 }
 
-.result{
-    /* background-color: #929aab; */
-    font-size: xx-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 0%;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.481);
+#submit:hover {
+    background-color: rgb(73, 48, 3);
+    color: white;
+}
+
+.result {
+    max-width: 90%;
+    overflow-wrap: anywhere;
+    text-align: center;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    padding: 0.2rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.65);
     border-radius: 30px;
-    gap:10%;
+}
+
+.result p {
+    margin: 0.5rem 0;
+}
+
+/* ---------- TABLETS: 601px–900px ---------- */
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    body {
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    header {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+        padding: 1.5rem 1rem;
+    }
+
+    main {
+        min-height: 70vh;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    #input-container {
+        gap: 1.5rem;
+        max-width: 700px;
+        font-size: 1.4rem;
+    }
+
+    .input input {
+        padding: 12px 10px;
+        font-size: 1rem;
+    }
+
+    #submit {
+        padding: 12px 32px;
+    }
+}
+
+/* ---------- MOBILE PHONES: 600px AND BELOW ---------- */
+
+@media screen and (max-width: 600px) {
+    body {
+        background-image: var(
+            --bg-mobile-image,
+            url("images/friends-mobile.png")
+        );
+        background-position: center top;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    header {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+        padding: 1.5rem 0.5rem;
+    }
+
+    main {
+        min-height: 70vh;
+        min-height: 70svh;
+        height: auto;
+        padding: 1.5rem 1rem 3rem;
+        gap: 1.5rem;
+    }
+
+    #input-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        width: 100%;
+        max-width: 400px;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .input {
+        width: 100%;
+        flex: none;
+    }
+
+    .input label {
+        padding: 0.6rem;
+    }
+
+    .input input {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #submit {
+        width: 100%;
+        max-width: 250px;
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    #flames-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .result {
+        max-width: 100%;
+        font-size: 1.3rem;
+        padding: 0.6rem 1.2rem;
+    }
 }

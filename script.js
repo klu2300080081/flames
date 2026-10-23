@@ -40,16 +40,28 @@ function calculateFlames() {
 document.getElementById("result").textContent = result;
 
 // Change background based on result
+
 const backgrounds = {
-    "Friends": "friends-full.png",
-    "Lovers": "love-full.png",
-    "Affectionate": "affection-full.png",
-    "Marriage": "marriage-full.png",
-    "Enemies": "enemy-full.png",
-    "Siblings": "siblings-full.png"
+    Friends: "friends",
+    Lovers: "love",
+    Affectionate: "affection",
+    Marriage: "marriage",
+    Enemies: "enemy",
+    Siblings: "siblings"
 };
 
-document.body.style.backgroundImage = `url('images/${backgrounds[result]}')`;
+const imageName = backgrounds[result];
+
+document.body.style.setProperty(
+    "--bg-image",
+    `url("images/${imageName}-full.png")`
+);
+
+document.body.style.setProperty(
+    "--bg-mobile-image",
+    `url("images/${imageName}-mobile.png")`
+);
+
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundPosition = "center";
 document.body.style.backgroundRepeat = "no-repeat";
@@ -66,7 +78,7 @@ document.body.style.backgroundRepeat = "no-repeat";
 });
 
 // Handle Check button click
-document.getElementById("flamesForm").addEventListener("submit", function(event) {
+document.getElementById("flames-form").addEventListener("submit", function(event) {
     event.preventDefault();
     calculateFlames();
 });
